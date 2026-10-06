@@ -1,0 +1,207 @@
+/* style.css - Student Task Manager */
+
+:root {
+    --primary-color: #4a90e2;
+    --primary-dark: #357abd;
+    --secondary-color: #f5f7fa;
+    --text-color: #333333;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --card-bg: #ffffff;
+    --border-color: #d9dee5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Headings */
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin: 20px 0 12px;
+    text-align: center;
+}
+
+/* Form */
+form {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form br {
+    display: none;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Buttons */
+button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.delete-btn,
+button.delete {
+    background-color: var(--danger-color);
+}
+
+.delete-btn:hover,
+button.delete:hover {
+    background-color: #c0392b;
+}
+
+.complete-btn,
+button.complete {
+    background-color: var(--success-color);
+}
+
+.complete-btn:hover,
+button.complete:hover {
+    background-color: #27ae60;
+}
+
+/* Search box */
+#search,
+input[type="search"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Task list and task cards */
+#task-list,
+.task-list {
+    list-style: none;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-card,
+#task-list li {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover,
+#task-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.task-card h3 {
+    margin-bottom: 6px;
+}
+
+.task-card p {
+    margin-bottom: 10px;
+    color: #666666;
+}
+
+.task-card.completed {
+    border-left-color: var(--success-color);
+    opacity: 0.75;
+}
+
+.task-card.completed h3 {
+    text-decoration: line-through;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
